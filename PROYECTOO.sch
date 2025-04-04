@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -10939,6 +10939,15 @@ Source: &lt;a href="https://www.espressif.com/sites/default/files/documentation/
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="IC10" library="ESP32-S3-WROOM-1-N16R8" deviceset="ESP32-S3-WROOM-1-N16R8" device=""/>
+<part name="C6" library="capacitor-wima" library_urn="urn:adsk.eagle:library:116" deviceset="C" device="2.5/2" package3d_urn="urn:adsk.eagle:package:5415/1"/>
+<part name="R10" library="resistor-shunt" library_urn="urn:adsk.eagle:library:346" deviceset="SMK" device="" package3d_urn="urn:adsk.eagle:package:25215/1" value="12K"/>
+<part name="R11" library="resistor-shunt" library_urn="urn:adsk.eagle:library:346" deviceset="SMK" device="" package3d_urn="urn:adsk.eagle:package:25215/1" value="12K"/>
+<part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="GND19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
+<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11219,8 +11228,38 @@ Source: &lt;a href="https://www.espressif.com/sites/default/files/documentation/
 <attribute name="VALUE" x="198.12" y="134.62" size="1.778" layer="96"/>
 </instance>
 <instance part="IC10" gate="G$1" x="340.36" y="104.14" smashed="yes">
-<attribute name="NAME" x="369.57" y="111.76" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="369.57" y="109.22" size="1.778" layer="96" align="center-left"/>
+<attribute name="NAME" x="346.71" y="111.76" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="346.71" y="109.22" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="C6" gate="G$1" x="320.04" y="109.22" smashed="yes">
+<attribute name="NAME" x="321.564" y="109.601" size="1.778" layer="95"/>
+<attribute name="VALUE" x="321.564" y="104.521" size="1.778" layer="96"/>
+</instance>
+<instance part="R10" gate="G$1" x="307.34" y="111.76" smashed="yes" rot="R270">
+<attribute name="NAME" x="301.0916" y="113.03" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="304.419" y="113.03" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="R11" gate="G$1" x="396.24" y="114.3" smashed="yes" rot="R270">
+<attribute name="NAME" x="389.9916" y="115.57" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="393.319" y="115.57" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="P+2" gate="VCC" x="327.66" y="111.76" smashed="yes">
+<attribute name="VALUE" x="325.12" y="109.22" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND19" gate="1" x="312.42" y="104.14" smashed="yes">
+<attribute name="VALUE" x="309.88" y="101.6" size="1.778" layer="96"/>
+</instance>
+<instance part="GND20" gate="1" x="289.56" y="81.28" smashed="yes">
+<attribute name="VALUE" x="287.02" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="GND21" gate="1" x="408.94" y="96.52" smashed="yes">
+<attribute name="VALUE" x="406.4" y="93.98" size="1.778" layer="96"/>
+</instance>
+<instance part="P+3" gate="VCC" x="396.24" y="127" smashed="yes">
+<attribute name="VALUE" x="393.7" y="124.46" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P+5" gate="VCC" x="307.34" y="127" smashed="yes">
+<attribute name="VALUE" x="304.8" y="124.46" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -11333,6 +11372,28 @@ Source: &lt;a href="https://www.espressif.com/sites/default/files/documentation/
 <wire x1="200.66" y1="139.7" x2="200.66" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="200.66" y1="160.02" x2="203.2" y2="160.02" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="GND19" gate="1" pin="GND"/>
+<pinref part="IC10" gate="G$1" pin="GND_1"/>
+<wire x1="340.36" y1="104.14" x2="332.74" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="104.14" x2="332.74" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="116.84" x2="312.42" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="116.84" x2="312.42" y2="106.68" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND20" gate="1" pin="GND"/>
+<pinref part="IC10" gate="G$1" pin="EN"/>
+<wire x1="340.36" y1="99.06" x2="307.34" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="307.34" y1="99.06" x2="289.56" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="289.56" y1="99.06" x2="289.56" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="307.34" y1="106.68" x2="307.34" y2="99.06" width="0.1524" layer="91"/>
+<junction x="307.34" y="99.06"/>
+</segment>
+<segment>
+<pinref part="GND21" gate="1" pin="GND"/>
+<wire x1="408.94" y1="104.14" x2="408.94" y2="99.06" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -11380,6 +11441,20 @@ Source: &lt;a href="https://www.espressif.com/sites/default/files/documentation/
 <label x="10.16" y="93.98" size="1.778" layer="95"/>
 <wire x1="7.62" y1="93.98" x2="12.7" y2="93.98" width="0.1524" layer="91"/>
 <junction x="12.7" y="93.98"/>
+</segment>
+<segment>
+<pinref part="P+2" gate="VCC" pin="VCC"/>
+<wire x1="327.66" y1="101.6" x2="327.66" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="P+3" gate="VCC" pin="VCC"/>
+<wire x1="396.24" y1="119.38" x2="396.24" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="P+5" gate="VCC" pin="VCC"/>
+<wire x1="307.34" y1="116.84" x2="307.34" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -11754,6 +11829,26 @@ Source: &lt;a href="https://www.espressif.com/sites/default/files/documentation/
 <pinref part="IC3" gate="G$1" pin="V+"/>
 <wire x1="228.6" y1="160.02" x2="231.14" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="231.14" y1="160.02" x2="231.14" y2="175.26" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="IC10" gate="G$1" pin="3V3"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="340.36" y1="101.6" x2="320.04" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="101.6" x2="320.04" y2="104.14" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$43" class="0">
+<segment>
+<pinref part="IC10" gate="G$1" pin="IO48"/>
+<wire x1="340.36" y1="43.18" x2="332.74" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="43.18" x2="332.74" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="332.74" y1="35.56" x2="383.54" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="383.54" y1="35.56" x2="383.54" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="383.54" y1="106.68" x2="396.24" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="R11" gate="G$1" pin="1"/>
+<wire x1="396.24" y1="106.68" x2="396.24" y2="109.22" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
