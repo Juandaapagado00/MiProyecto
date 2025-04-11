@@ -11247,6 +11247,12 @@ W = angled&lt;p&gt;
 <wire x1="452.12" y1="99.06" x2="452.12" y2="129.54" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="436.88" y1="99.06" x2="436.88" y2="66.04" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="436.88" y1="66.04" x2="398.78" y2="66.04" width="0.1524" layer="94" style="shortdash"/>
+<text x="88.9" y="124.46" size="1.778" layer="94">FILTRO PASA BANDA</text>
+<text x="66.04" y="106.68" size="1.778" layer="94" rot="R180">CARGA</text>
+<text x="50.8" y="38.1" size="1.778" layer="94" rot="R180">REGULADOR 3.3V</text>
+<text x="355.6" y="124.46" size="1.778" layer="94" rot="R180">ESP32</text>
+<text x="421.64" y="93.98" size="1.778" layer="94" rot="R180">PANTALLA</text>
+<text x="111.76" y="60.96" size="1.778" layer="94" rot="R180">VOLTAJE REF</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
